@@ -52,6 +52,10 @@ body {
     font-size: 23px;
     padding-top: 40px;
   }
+
+  .Weather li {
+    list-style: none;
+  }
   
   .Weather .details {
     font-size: 12px;
@@ -94,7 +98,7 @@ body {
   }
 
   .sourceLink {
-font-size: 15px;
+font-size: 11px;
 text-align: left;
 
   }

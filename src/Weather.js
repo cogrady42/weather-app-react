@@ -3,10 +3,11 @@ import "./Weather.css";
 
 export default function Weather() {
         let weatherData = {
-          date: "Wednesday 10:21pm",
+          date: "wednesday 10:21pm",
           city: "Toronto",
           temperature: 19,
           humidity: 69,
+          precipitation: 50,
           wind: 10,
           feelslike: 25,
           description: "Cloudy"
@@ -26,13 +27,13 @@ export default function Weather() {
                           placeholder="change city"
                           autocomplete="off"
                           className="change-city"
+                          autoFocus="on"
                         />
                         <input
                           type="submit"
                           value="search"
                           className="search-button"
                         />
-                        <button className="search-button">location</button>
                       </form>
                     </div>
                   </div>
@@ -41,17 +42,16 @@ export default function Weather() {
       
                   <div className="row align-items-center">
                     <div className="col">
-                      <div className="details">
-                        humidity: <span>{weatherData.humidity}</span>%
-                        <br />
-                        wind: <span>{weatherData.wind}</span>km/h
-                      </div>
+                      <ul className="details">
+                        <li>humidity: {weatherData.humidity}% </li>
+                        <li>wind: {weatherData.wind}km/h </li>
+                        <li>precipitation: {weatherData.precipitation}% </li>
+                      </ul>
                     </div>
                     <div className="col">
                       <div className="temperature">
                         <span> {weatherData.temperature}</span>
-                        <span className="unit">°C|</span>
-                        <span className="unit">°F </span>
+                        <span className="unit">°C</span>
                       </div>
                     </div>
                     <div className="col">
