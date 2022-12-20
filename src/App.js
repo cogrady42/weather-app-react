@@ -4,13 +4,13 @@ import './App.css';
 export default function App() {
   return (
     <div className="App">
-  <h1>
-    Hello!
-  </h1>
+    <div className='container'> 
+    <h1>Weather App</h1>
   <footer>
     This project was coded by Cecilia O'Grady and is{" "}
-  <a href='https://github.com/cogrady42/weather-app-react' target="_blank">Open-sourced on Github</a>
+  <a href='https://github.com/cogrady42/weather-app-react' target="_blank" rel="noreferrer">Open-sourced on Github</a>
   </footer>
+    </div>
     </div>
   );
 }
