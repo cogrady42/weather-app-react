@@ -1,0 +1,10 @@
+.App {
+  max-width: 650px;
+  margin: 0 auto
+}
+
+.App .sourceLink {
+  font-size: 11px;
+  text-align: left;
+  margin-left: 10px;
+}

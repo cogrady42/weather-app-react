@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready:false });
+    const [city, setCity] = useState(props.defaultCity);
 
     function handleResponse(response) {
-        console.log(response.data.main)
-
         setWeatherData({
             ready: true,
+            city: response.data.name,
             humidity: response.data.main.humidity,
             date: new Date(response.data.dt * 1000),
             wind: response.data.wind.speed,
@@ -18,6 +19,21 @@ export default function Weather(props) {
             feelsLike: response.data.main.feels_like,
             description: response.data.weather[0].description,
         });
+    }
+
+    function search() {
+        let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(handleResponse);
+    };
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
+
+    function handleCityChange(event) {
+        setCity(event.target.value);
     }
 
       if (weatherData.ready) { 
@@ -31,13 +47,14 @@ export default function Weather(props) {
                         <FormattedDate date={weatherData.date} />
                     </div>
                     <div className="col">
-                      <form className="change-city">
+                      <form onSubmit={handleSubmit} className="change-city">
                         <input
                           type="search"
                           placeholder="change city"
                           autoComplete="off"
                           className="change-city"
                           autoFocus="on"
+                          onChange={handleCityChange}
                         />
                         <input
                           type="submit"
@@ -47,52 +64,17 @@ export default function Weather(props) {
                       </form>
                     </div>
                   </div>
-      
-                  <h1>Toronto</h1>
-      
-                  <div className="row align-items-center">
-                    <div className="col">
-                      <ul className="details">
-                        <li>humidity: {weatherData.humidity}% </li>
-                        <li>wind: {Math.round(weatherData.wind)}km/h </li>
-                      </ul>
-                    </div>
-                    <div className="col">
-                      <div className="temperature">
-                        <span> {Math.round(weatherData.temperature)}</span>
-                        <span className="unit">°C</span>
-                      </div>
-                    </div>
-                    <div className="col">
-                      <div className="feels-like">
-                        feels like
-                        <div className="temperature2">{Math.round(weatherData.feelsLike)}°</div>
-                      </div>
-                    </div>
-                  </div>
-      
-                  <h2>{weatherData.description}</h2>
-                </div>
-                <div className="sourceLink">
-              <a href="https://github.com/cogrady42/react-weather-app" target="blank">
-                 Open-source Code  
-              </a>
-              <span>
-                  {" "} by Cecilia O'Grady
-              </span>
-            </div>
+                  <WeatherInfo data={weatherData}/>   
               </div>
            </div>
            </div>
+           </div>
+
         );
-      } else {
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
-    axios.get(apiUrl).then(handleResponse);
-   
-
+      } 
+      else {
+        search();
     return "Loading..."
-
       } 
 }
        
