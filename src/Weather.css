@@ -58,7 +58,7 @@ body {
   }
   
   .Weather .details {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   .Weather .temperature {
@@ -89,16 +89,6 @@ body {
     color: #204749;
   }
   
-  .Weather .feels-like {
-    font-size: 12px;
-  }
-  
-  .Weather .temperature2 {
-    color: #357376;
-    font-size: 20px;
-    text-align: center;
-  }
-  
   .Weather h2 {
-    font-size: 15px;
+    font-size: 14px;
   }

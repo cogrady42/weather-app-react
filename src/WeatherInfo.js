@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon"
 
 export default function WeatherInfo(props) {
     return (
@@ -19,14 +20,14 @@ export default function WeatherInfo(props) {
           </div>
         </div>
         <div className="col">
-          <div className="feels-like">
-            feels like
-            <div className="temperature2">{Math.round(props.data.feelsLike)}°c</div>
+          <div className="WeatherIcon">
+            <WeatherIcon code={props.data.icon} />
+            <h2>{props.data.description}</h2>
           </div>
         </div>
       </div>
 
-      <h2>{props.data.description}</h2>
+      
     </div>
     )
 }

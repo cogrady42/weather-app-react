@@ -3,6 +3,7 @@ import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready:false });
@@ -18,6 +19,7 @@ export default function Weather(props) {
             temperature: response.data.main.temp,
             feelsLike: response.data.main.feels_like,
             description: response.data.weather[0].description,
+            icon: response.data.weather[0].icon,
         });
     }
 
@@ -64,8 +66,10 @@ export default function Weather(props) {
                       </form>
                     </div>
                   </div>
-                  <WeatherInfo data={weatherData}/>   
+                  <WeatherInfo data={weatherData}/>           
+                  <WeatherForecast />
               </div>
+      
            </div>
            </div>
            </div>
