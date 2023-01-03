@@ -8,7 +8,7 @@ export default function App() {
     <Weather defaultCity="Toronto" />
 
     <footer className="sourceLink">
-              <a href="https://github.com/cogrady42/react-weather-app" target="blank">
+              <a href="https://github.com/cogrady42/react-weather-app" target="blank" rel="noopener norefferer">
                  Open-source Code  
               </a>
               <span>
