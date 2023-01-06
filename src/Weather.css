@@ -1,11 +1,11 @@
 body {
-    color: #1d4d4f;
+    color: #c32c6e;
     font-family: "Roboto Condensed", sans-serif;
     text-align: center;
   }
   
   .Weather .weather-app {
-    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    background: radial-gradient(circle, #eeaecaae 0%, #94bbe99d 100%);
     border-style: solid;
     border-radius: 5px;
     border: #dfe9f3;
@@ -34,12 +34,12 @@ body {
   }
   
   .Weather .search-button {
-    background: white;
+    background: #e6edf59d;
     border-color: #dfe9f3;
     border-width: 1px;
     border-radius: 2px;
     border-style: solid;
-    color: #1d4d4f;
+    color: #c32c6e;
     font-size: 15px;
     transition: all 200ms ease-in-out;
   }
@@ -62,7 +62,7 @@ body {
   }
   
   .Weather .temperature {
-    color: #357376;
+    color: #c32c6e;
     font-size: 100px;
     font-weight: 600;
     line-height: 1;
@@ -76,19 +76,19 @@ body {
   }
   
   .Weather .unit {
-    color: #357376;
+    color: #c32c6e;
     transition: all 200ms ease-in-out;
     text-decoration: none;
   }
 
   .Weather a {
     text-decoration: none;
-    color: #357376;
+    color: #c32c6e;
     font-size: 15px;
   }
   
   .Weather a:hover {
-    color: #204749;
+    color: #730736;
   }
   
   .Weather h2 {
