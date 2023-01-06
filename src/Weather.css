@@ -66,11 +66,13 @@ body {
     font-size: 100px;
     font-weight: 600;
     line-height: 1;
+    margin-bottom: 40px;
   }
   
   .Weather .unit {
     font-size: 20px;
     vertical-align: 57px;
+
   }
   
   .Weather .unit {

@@ -15,3 +15,11 @@
     opacity: 0.6;
     margin-left: 5px;
 }
+
+.WeatherForecast-wrapper {
+    background-color: #DFE9F3;
+    border: rgb(254, 246, 236);
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+  }
